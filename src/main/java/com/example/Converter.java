@@ -33,7 +33,7 @@ public class Converter {
             try {
                 double celsius = Double.parseDouble(celsiusInput.getText());
                 double fahrenheit = celsiusToFahrenheit(celsius);
-                fahrenheitResult.setText("Fahrenheit: " + fahrenheit);
+                fahrenheitResult.setText(UnitFormatter.formatTemperature(celsius, fahrenheit));
             } catch (NumberFormatException ex) {
                 fahrenheitResult.setText("Invalid number");
             }
@@ -52,7 +52,7 @@ public class Converter {
             try {
                 double km = Double.parseDouble(kmInput.getText());
                 double miles = kilometersToMiles(km);
-                milesResult.setText("Miles: " + miles);
+                milesResult.setText(UnitFormatter.formatDistance(km, miles));
             } catch (NumberFormatException ex) {
                 milesResult.setText("Invalid number");
             }
